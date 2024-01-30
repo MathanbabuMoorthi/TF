@@ -3,21 +3,21 @@ pipeline{
 
     stages{
         stage('Initialize'){
-            step{
+            steps{
                 script{
                     sh 'terraform init'
                 }
             }
         }
         stage('Planing'){
-            step{
+            steps{
                 script{
                     sh 'terraform plan'
                 }
             }
         }
         stage('Appling'){
-            step{
+            steps{
                 script{
                 sh 'terraform apply -auto-approve'
                 }
