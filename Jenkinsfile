@@ -21,7 +21,8 @@ pipeline {
         stage('Applying') {
             steps {
                 script {
-                    bat 'terraform apply -auto-approve'
+                    echo "The action from the parameter is --> ${action}"
+                    bat 'terraform ${action} -auto-approve'
                 }
             }
         }
