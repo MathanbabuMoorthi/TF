@@ -22,7 +22,7 @@ pipeline {
             steps {
                 script {
                     echo "The action from the parameter is --> ${action}"
-                    bat 'terraform ${action} -auto-approve'
+                    bat 'terraform ${action} --auto-approve'
                 }
             }
         }
