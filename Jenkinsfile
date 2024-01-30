@@ -1,27 +1,30 @@
-pipeline{
+pipeline {
     agent any
 
-    stages{
-        stage('Initialize'){
-            steps{
-                script{
+    stages {
+        stage('Initialize') {
+            steps {
+                script {
                     sh 'terraform init'
                 }
             }
         }
-        stage('Planing'){
-            steps{
-                script{
+
+        stage('Planning') {
+            steps {
+                script {
                     sh 'terraform plan'
                 }
             }
         }
-        stage('Appling'){
-            steps{
-                script{
-                sh 'terraform apply -auto-approve'
+
+        stage('Applying') {
+            steps {
+                script {
+                    sh 'terraform apply -auto-approve'
                 }
             }
         }
     }
 }
+
